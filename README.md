@@ -1,13 +1,17 @@
 <div style="display: flex; justify-content: space-between; align-items: center; border: 2px solid #ccc; padding: 10px; border-radius: 10px;">
-  <span style="font-weight: bold; font-size: 1.4rem;">Chromia Todo-List DApp powered by Chromia</span>
+  <span style="font-weight: bold; font-size: 1.4rem;">Chromia Todo-List Dapp powered by Chromia</span>
   <img src="frontend/assets/image.png" alt="Chromia Logo" style="height: 50px; width: 50px; border-radius: 50%; border: 2px solid #ccc;">
 </div>
 
 ## Author Information
 
-**Author**: Yonas Awoke Yitay**Email**: [yonasawokeyitay@gmail.com](mailto:yonasawokeyitay@gmail.com) || [bdu1405437@bdu.edu.et](mailto:bdu1405437@bdu.edu.et)**Telegram**: [@YonanYonani](https://t.me/YourTelegramUsername)**University**: Bahir Dar University
+**Author**: Yonas Awoke Yitay
 
-> _"I prefer a clean code than a just working code"_
+**Email**: [yonasawokeyitay@gmail.com](mailto:yonasawokeyitay@gmail.com) || [bdu1405437@bdu.edu.et](mailto:bdu1405437@bdu.edu.et)
+
+**Telegram**: [@YonanYonani](https://t.me/YourTelegramUsername)**University**: Bahir Dar University
+
+> ###### _**"I prefer a clean code than a just working code"**_
 
 ## Project description
 
@@ -92,7 +96,7 @@ pnpm dev
 
 Open the http://localhost:3000/
 
-Thanks Incase you fac any depeendency problem please reachout to me!
+Thanks Incase you found any dependency problem please reach out to me!
 
 ## Usage Instructions
 
@@ -107,7 +111,7 @@ You can perform CRUD operations, filter tasks, and sort them. By default:
 
 <img src="frontend/assets/ui.png" alt="Task Management Screenshot" width="500" />
 
-_Please are going to be execulted If the date is int he past nothing happen if you try to do for more please see my backe end implmentation_
+_if you are going to a new task whose date is is in the past, nothing happen which means the task wont be created. for more please see my backend implmentation_
 
 ## Additional Notes
 
