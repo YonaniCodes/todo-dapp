@@ -57,6 +57,7 @@ To run this project locally, follow these steps:
 
 ```bash
 git clone https://github.com/YonaniCodes/todo-dapp.git
+the change direrectory to the cloned repo
 ```
 
 ### **BlockChain Setup Guide**
