@@ -1,0 +1,6 @@
+@extend(auth.auth_handler)
+function () = auth.add_auth_handler(
+    flags = ["MySession"]
+);
+
+function require_task(id: byte_array) = require(task @? { id }, "Task with id %s does not exist".format(id)); 

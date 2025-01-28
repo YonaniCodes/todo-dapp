@@ -1,0 +1,39 @@
+enum task_sorting { NONE, DUE_DATE_DESC, DUE_DATE_ASC }
+enum task_filtering { ALL, PENDING, COMPLETED, OVERDUE }
+
+query get_tasks(user_id: byte_array, task_sorting, task_filtering) {
+    // Check if the user exists
+    val user = require(
+        user @? { user_id },
+        "User with id %s does not exist".format(user_id)
+    );
+
+    val tasks = task @* { 
+        user, 
+        when (task_filtering) {
+            PENDING -> .status == task_status.PENDING;
+            COMPLETED -> .status == task_status.COMPLETED;
+            OVERDUE -> .status == task_status.OVERDUE;
+            else -> true;
+        } 
+    } (
+        @omit @sort_desc when (task_sorting) {
+            DUE_DATE_DESC -> .due_date;
+            DUE_DATE_ASC -> -.due_date;
+            else -> task.rowid.to_integer();
+        },
+        task_dto(
+            task.id,
+            task.description,
+            task.title,
+            task.status,
+            task.due_date,
+            user = task.user.to_struct()
+        )
+    );
+
+    return tasks;
+}
+
+
+query get_me(user_id: byte_array)=user @? { user_id }(.name) ;

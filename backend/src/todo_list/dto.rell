@@ -1,0 +1,8 @@
+struct task_dto {
+    id: byte_array;
+    description: text;
+    title: text;
+    due_date: timestamp;
+    status: task_status;
+    user: struct<user>;
+}

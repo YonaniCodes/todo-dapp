@@ -1,0 +1,31 @@
+@test module;
+
+ 
+import ^^.main.*;
+import lib.ft4.test.utils. { ft_auth_operation_for };
+
+val alice = rell.test.pubkeys.alice;
+val bob = rell.test.pubkeys.bob;
+val charlie = rell.test.pubkeys.charlie;
+val alice_kp = rell.test.keypairs.alice;
+val bob_kp = rell.test.keypairs.bob;
+val charlie_kp = rell.test.keypairs.charlie;
+
+function test_create_entities() {
+    rell.test.tx()
+        .op(create_user("Alice", alice))
+        .op(create_user("Bob", bob))
+        .run();
+    assert_equals(user @ { } (@sum 1), 2);
+    rell.test.tx()
+        .op(ft_auth_operation_for(alice))
+        .op(create_task(1483228800, "title", "description"))
+        .op(ft_auth_operation_for(alice))
+        .op(create_task(1483228899, "title", "description"))
+        .sign(alice_kp)
+        .run();
+  
+    assert_equals(task @ { } (@sum 1), 2);
+   
+   
+}

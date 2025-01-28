@@ -1,0 +1,26 @@
+entity user {
+    mutable name;
+    key id: byte_array;
+    key account;
+}
+
+enum task_status {
+    PENDING,
+    COMPLETED,
+    OVERDUE  
+}
+
+// Task entity definition
+entity task {
+    key id: byte_array = op_context.transaction.tx_rid;
+    index user;
+
+    mutable due_date: timestamp;
+    mutable description: text;
+    mutable title: text;
+    mutable status: task_status = task_status.PENDING;
+    
+    // For logging purposes
+    created_at: timestamp = op_context.last_block_time;
+    mutable updated_at: timestamp = op_context.last_block_time; // Will be updated when the record changes
+}

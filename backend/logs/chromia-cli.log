@@ -1,0 +1,127 @@
+WARN  2025-01-22 16:37:24.080 [chain-id=0] - [main] SqlInit Table for undefined entity 'user' found
+WARN  2025-01-22 16:37:24.086 [chain-id=0] - [main] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-22 16:37:24.087 [chain-id=0] - [main] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-23 05:36:44.207 [chain-id=0] - [main] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-23 05:36:44.211 [chain-id=0] - [main] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-23 06:10:47.540 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-23 06:10:47.541 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-23 06:12:17.547 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-23 06:12:17.548 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-23 06:29:46.273 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-23 06:29:46.274 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-23 07:14:54.702 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-23 07:14:54.703 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-23 07:32:33.887 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-23 07:32:33.888 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-23 08:46:29.023 [chain-id=0] - [main] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-23 08:46:29.027 [chain-id=0] - [main] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-23 08:48:33.264 [chain-id=0] - [main] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-23 08:48:33.269 [chain-id=0] - [main] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-23 09:47:53.819 [chain-id=0] - [main] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-23 09:47:53.823 [chain-id=0] - [main] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-23 10:22:08.209 [chain-id=0] - [main] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-23 10:22:08.213 [chain-id=0] - [main] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-23 14:24:50.766 [chain-id=0] - [main] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-23 14:24:50.773 [chain-id=0] - [main] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-23 17:43:01.366 [chain-id=0] - [main] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-23 17:43:01.369 [chain-id=0] - [main] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-23 19:28:29.254 [chain-id=0] - [main] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-23 19:28:29.258 [chain-id=0] - [main] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-23 21:30:47.542 [chain-id=0] - [main] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-23 21:30:47.548 [chain-id=0] - [main] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-23 23:06:55.966 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-23 23:06:55.968 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-24 06:51:50.759 [chain-id=0] - [main] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-24 06:51:50.763 [chain-id=0] - [main] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-24 08:02:29.186 [chain-id=0] - [main] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-24 08:02:29.192 [chain-id=0] - [main] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-24 08:30:49.309 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-24 08:30:49.310 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-24 12:44:42.303 [chain-id=0] - [main] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-24 12:44:42.307 [chain-id=0] - [main] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-24 15:17:14.155 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-24 15:17:14.157 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-24 16:44:50.108 [chain-id=0] - [main] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-24 16:44:50.112 [chain-id=0] - [main] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-24 18:29:58.135 [chain-id=0] - [main] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-24 18:29:58.140 [chain-id=0] - [main] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-24 19:21:31.340 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-24 19:21:31.341 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-24 19:32:02.041 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-24 19:32:02.041 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-24 19:34:02.232 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-24 19:34:02.233 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-24 19:39:48.764 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-24 19:39:48.765 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-24 19:41:48.888 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-24 19:41:48.889 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-24 19:45:19.103 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-24 19:45:19.104 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-25 11:43:12.488 [chain-id=0] - [main] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-25 11:43:12.493 [chain-id=0] - [main] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-25 12:49:48.393 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-25 12:49:48.394 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-25 13:07:49.573 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-25 13:07:49.574 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-25 13:27:51.097 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-25 13:27:51.098 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-25 14:01:53.565 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-25 14:01:53.567 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-25 14:41:54.214 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-25 14:41:54.215 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-25 14:42:24.232 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-25 14:42:24.235 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-25 15:30:08.273 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-25 15:30:08.274 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-26 17:30:57.115 [chain-id=0] - [main] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-26 17:30:57.122 [chain-id=0] - [main] SqlInit Table for undefined entity 'post' found
+ERROR 2025-01-26 17:36:26.751 - [main] BaseApiInfrastructure Unable to start REST API on port 7740
+java.net.BindException: Address in use
+	at java.base/sun.nio.ch.Net.bind0(Native Method) ~[?:?]
+	at java.base/sun.nio.ch.Net.bind(Net.java:565) ~[?:?]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.netBind(ServerSocketChannelImpl.java:344) ~[?:?]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:301) ~[?:?]
+	at io.netty.channel.socket.nio.NioServerSocketChannel.doBind(NioServerSocketChannel.java:141) ~[netty-transport-4.1.115.Final.jar:4.1.115.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.bind(AbstractChannel.java:561) ~[netty-transport-4.1.115.Final.jar:4.1.115.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.bind(DefaultChannelPipeline.java:1281) ~[netty-transport-4.1.115.Final.jar:4.1.115.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeBind(AbstractChannelHandlerContext.java:600) ~[netty-transport-4.1.115.Final.jar:4.1.115.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.bind(AbstractChannelHandlerContext.java:579) ~[netty-transport-4.1.115.Final.jar:4.1.115.Final]
+	at io.netty.channel.DefaultChannelPipeline.bind(DefaultChannelPipeline.java:922) ~[netty-transport-4.1.115.Final.jar:4.1.115.Final]
+	at io.netty.channel.AbstractChannel.bind(AbstractChannel.java:259) ~[netty-transport-4.1.115.Final.jar:4.1.115.Final]
+	at io.netty.bootstrap.AbstractBootstrap$2.run(AbstractBootstrap.java:380) ~[netty-transport-4.1.115.Final.jar:4.1.115.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173) ~[netty-common-4.1.115.Final.jar:4.1.115.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166) ~[netty-common-4.1.115.Final.jar:4.1.115.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472) ~[netty-common-4.1.115.Final.jar:4.1.115.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569) ~[netty-transport-4.1.115.Final.jar:4.1.115.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997) ~[netty-common-4.1.115.Final.jar:4.1.115.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.115.Final.jar:4.1.115.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.115.Final.jar:4.1.115.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?]
+ERROR 2025-01-26 17:36:26.760 - [main] CliLauncher Address in use
+java.net.BindException: Address in use
+	at java.base/sun.nio.ch.Net.bind0(Native Method) ~[?:?]
+	at java.base/sun.nio.ch.Net.bind(Net.java:565) ~[?:?]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.netBind(ServerSocketChannelImpl.java:344) ~[?:?]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:301) ~[?:?]
+	at io.netty.channel.socket.nio.NioServerSocketChannel.doBind(NioServerSocketChannel.java:141) ~[netty-transport-4.1.115.Final.jar:4.1.115.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.bind(AbstractChannel.java:561) ~[netty-transport-4.1.115.Final.jar:4.1.115.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.bind(DefaultChannelPipeline.java:1281) ~[netty-transport-4.1.115.Final.jar:4.1.115.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeBind(AbstractChannelHandlerContext.java:600) ~[netty-transport-4.1.115.Final.jar:4.1.115.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.bind(AbstractChannelHandlerContext.java:579) ~[netty-transport-4.1.115.Final.jar:4.1.115.Final]
+	at io.netty.channel.DefaultChannelPipeline.bind(DefaultChannelPipeline.java:922) ~[netty-transport-4.1.115.Final.jar:4.1.115.Final]
+	at io.netty.channel.AbstractChannel.bind(AbstractChannel.java:259) ~[netty-transport-4.1.115.Final.jar:4.1.115.Final]
+	at io.netty.bootstrap.AbstractBootstrap$2.run(AbstractBootstrap.java:380) ~[netty-transport-4.1.115.Final.jar:4.1.115.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173) ~[netty-common-4.1.115.Final.jar:4.1.115.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166) ~[netty-common-4.1.115.Final.jar:4.1.115.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472) ~[netty-common-4.1.115.Final.jar:4.1.115.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569) ~[netty-transport-4.1.115.Final.jar:4.1.115.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997) ~[netty-common-4.1.115.Final.jar:4.1.115.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.115.Final.jar:4.1.115.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.115.Final.jar:4.1.115.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?]
+WARN  2025-01-26 17:37:22.640 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-26 17:37:22.642 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-27 10:20:29.353 [chain-id=0] - [main] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-27 10:20:29.358 [chain-id=0] - [main] SqlInit Table for undefined entity 'post' found
+WARN  2025-01-27 10:39:01.887 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'follower' found
+WARN  2025-01-27 10:39:01.889 [chain-id=0] - [pool-4-thread-1] SqlInit Table for undefined entity 'post' found
