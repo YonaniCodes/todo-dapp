@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/dialog";
 import "react-datepicker/dist/react-datepicker.css";
 import EditTaskForm from "./EditTaskForm";
+import { useEditTask } from "../_lib/useEditTask";
 
 type EditTaskDialogueProps = {
   children: React.ReactElement;
@@ -18,6 +19,9 @@ export default function EditTaskDialogue({
   children,
   task_id,
 }: EditTaskDialogueProps) {
+  const { isEditing, editTask } = useEditTask();
+
+  if (isEditing) return;
   return (
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>
@@ -29,7 +33,7 @@ export default function EditTaskDialogue({
           </DialogDescription>
         </DialogHeader>
         {/* Pass task_id to the form */}
-        <EditTaskForm task_id={task_id} />
+        <EditTaskForm task_id={task_id} editTask={editTask} />
       </DialogContent>
     </Dialog>
   );

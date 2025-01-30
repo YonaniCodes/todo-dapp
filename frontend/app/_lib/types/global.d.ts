@@ -11,3 +11,4 @@ export type TaskType = {
 export type TypePubkey = Uint8Array<ArrayBufferLike> | undefined;
 type StatusType = "COMPLETED" | "PENDING" | "OVERDUE";
 export type TypeSession = Session | undefined;
+export type editargType = { arg: [string, string, number, Uint8Array] };

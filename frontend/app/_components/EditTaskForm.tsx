@@ -16,11 +16,11 @@ type TaskFormData = {
 
 interface EditTaskFormProps {
   task_id: Uint8Array;
+  // editTask: ()=>,
 }
 
-export default function EditTaskForm({ task_id }: EditTaskFormProps) {
+export default function EditTaskForm({ task_id, editTask }: any) {
   const { tasks } = useTasks();
-  const { editTask, isEditing } = useEditTask();
 
   const task = tasks?.find((task) => task.id === task_id);
 
@@ -91,13 +91,11 @@ export default function EditTaskForm({ task_id }: EditTaskFormProps) {
       {/* Footer Buttons */}
       <DialogFooter className="flex justify-end gap-2">
         <DialogClose asChild>
-          <Button disabled={isEditing} variant="secondary" type="button">
+          <Button disabled variant="secondary" type="button">
             Cancel
           </Button>
         </DialogClose>
-        <Button disabled={isEditing} type="submit">
-          {isEditing ? "Editing..." : "Save Changes"}
-        </Button>
+        <Button type="submit">Save Changes</Button>
       </DialogFooter>
     </form>
   );

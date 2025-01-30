@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { useSessionContext } from "../_components/ContextProvider";
-import { query } from "../_service/api";
+import { query } from "../service/api";
 import { TypePubkey } from "./types/global";
 
 const useGetMe = () => {

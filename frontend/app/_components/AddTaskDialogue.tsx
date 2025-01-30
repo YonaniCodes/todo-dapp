@@ -9,12 +9,19 @@ import {
 
 import "react-datepicker/dist/react-datepicker.css";
 import AddTaskForm from "./AddTaskForm";
+import { useCreateTask } from "../_lib/useCreateTask";
 
 export default function AddTaskDialogue({
   children,
 }: {
   children: React.ReactElement;
 }) {
+  const { isCreating, createTask } = useCreateTask();
+
+  console.log(typeof createTask);
+
+  if (isCreating) return;
+
   return (
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>
@@ -25,7 +32,7 @@ export default function AddTaskDialogue({
             Fill in the details of the task.
           </DialogDescription>
         </DialogHeader>
-        <AddTaskForm />
+        <AddTaskForm createTask={createTask} />
       </DialogContent>
     </Dialog>
   );

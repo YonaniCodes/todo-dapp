@@ -43,7 +43,7 @@ const tasks = [
 
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useSessionContext } from "../_components/ContextProvider";
-import { operation } from "../_service/api";
+import { operation } from "../service/api";
 import { TypeSession } from "../_lib/types/global";
 
 // Define the shape of the arguments for the task creation

@@ -7,7 +7,6 @@ import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import FormElement from "./FormElement";
 
-import { useCreateTask } from "../_lib/useCreateTask";
 import { Textarea } from "@/components/ui/textarea";
 
 // Define the type for form data
@@ -19,13 +18,12 @@ interface TaskFormData {
 
 // Define props for the FormElement component
 
-export default function AddTaskForm() {
+export default function AddTaskForm({ createTask }: any) {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<TaskFormData>(); // Use the TaskFormData type for form data
-  const { createTask, isCreating } = useCreateTask();
 
   const onSubmit: SubmitHandler<TaskFormData> = async (data) => {
     const { title, description } = data;
@@ -75,12 +73,8 @@ export default function AddTaskForm() {
       {/* Footer Buttons */}
       <DialogFooter className="flex justify-end gap-2">
         <DialogClose asChild>
-          <Button
-            disabled={isCreating}
-            type="button"
-            onClick={handleSubmit(onSubmit)}
-          >
-            {isCreating ? "Loading" : "Add Task"}
+          <Button type="button" onClick={handleSubmit(onSubmit)}>
+            Add Task
           </Button>
         </DialogClose>
       </DialogFooter>

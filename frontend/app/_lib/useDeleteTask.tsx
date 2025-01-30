@@ -1,7 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
 import { useSessionContext } from "../_components/ContextProvider";
 import { useQueryClient } from "@tanstack/react-query";
-import { operation } from "../_service/api";
+import { operation } from "../service/api";
 // Define the shape of the arguments for the task creation
 type argType = { arg: [Uint8Array] };
 

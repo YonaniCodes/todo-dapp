@@ -107,7 +107,7 @@ You can perform CRUD operations, filter tasks, and sort them. By default:
 
 <img src="./assets/ui.png" alt="Task Management Screenshot" width="500" />
 
-_Please are going to be execulted If the date is int he past nothing happen if you try to do for more please see my backe end implmentation_
+_Please are going to be execulted If the date is in the past nothing happen if you try to do for more please see my backe end implmentation_
 
 ## Additional Notes
 
