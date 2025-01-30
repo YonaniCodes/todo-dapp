@@ -41,13 +41,10 @@ const tasks = [
   },
 ];
 
-import {
-  QueryClient,
-  useMutation,
-  useQueryClient,
-} from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useSessionContext } from "../_components/ContextProvider";
 import { operation } from "../_service/api";
+import { TypeSession } from "../_lib/types/global";
 
 // Define the shape of the arguments for the task creation
 
@@ -68,7 +65,7 @@ export function useUploadTask() {
   return { isCreating, createTasks };
 }
 
-async function uploadTasks(session) {
+async function uploadTasks(session: TypeSession) {
   for (const task of tasks) {
     const { title, description } = task;
     const due_date = addRandomTimeToTimestamp(new Date().getTime());
