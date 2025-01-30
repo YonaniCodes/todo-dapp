@@ -5,7 +5,7 @@ import { useQueryParams } from "./useQueryParams";
 type pubkeyType = Buffer<ArrayBufferLike> | undefined;
 
 const useTasks = () => {
-  const session = useSessionContext();
+  const { session } = useSessionContext();
   const user_id: pubkeyType = session?.account?.id;
   const { getQueryParam } = useQueryParams();
 

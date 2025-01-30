@@ -47,12 +47,12 @@ import {
   useQueryClient,
 } from "@tanstack/react-query";
 import { useSessionContext } from "../_components/ContextProvider";
-import { operation } from "../service/api";
+import { operation } from "../_service/api";
 
 // Define the shape of the arguments for the task creation
 
 export function useUploadTask() {
-  const session = useSessionContext();
+  const { session } = useSessionContext();
   const queryClient = useQueryClient();
   // Corrected here
   const { isPending: isCreating, mutate: createTasks } = useMutation({

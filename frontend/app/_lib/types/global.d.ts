@@ -1,3 +1,5 @@
+import { Session } from "@chromia/ft4";
+
 export type TaskType = {
   id: Uint8Array; // Public key as Uint8Array
   title: string;
@@ -6,5 +8,6 @@ export type TaskType = {
   color: string;
   description: string;
 };
-
+export type TypePubkey = Uint8Array<ArrayBufferLike> | undefined;
 type StatusType = "COMPLETED" | "PENDING" | "OVERDUE";
+export type TypeSession = Session | undefined;

@@ -11,24 +11,14 @@ import {
   ttlLoginRule,
 } from "@chromia/ft4";
 import { createClient } from "postchain-client";
-import {
-  ReactNode,
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
-import { getRandomUserName } from "@/app/users";
+import { ReactNode, createContext, useContext, useState } from "react";
 
-// Create context for Chromia session
-const ChromiaContext = createContext<Session | undefined>(undefined);
-
-// 2.
-declare global {
-  interface Window {
-    ethereum: any;
-  }
+interface SessionContextType {
+  session: Session | undefined;
+  login: () => Promise<void>;
 }
+
+const ChromiaContext = createContext<SessionContextType | undefined>(undefined);
 
 export function ContextProvider({ children }: { children: ReactNode }) {
   const [session, setSession] = useState<Session | undefined>(undefined);
@@ -36,85 +26,57 @@ export function ContextProvider({ children }: { children: ReactNode }) {
   const nodeUrlPool = process.env.NEXT_PUBLIC_NODE_URL_POOL;
   const blockchainRid = process.env.NEXT_PUBLIC_BLOCKCHAIN_RID;
 
-  useEffect(() => {
-    const initSession = async () => {
+  const login = async () => {
+    try {
       console.log("Initializing Session");
 
-      try {
-        // 1. Initialize Client
-        console.log("Creating client...");
-        const client = await createClient({
-          nodeUrlPool,
-          blockchainRid,
+      const client = await createClient({ nodeUrlPool, blockchainRid });
+      const evmKeyStore = await createWeb3ProviderEvmKeyStore(window.ethereum);
+      const evmKeyStoreInteractor = createKeyStoreInteractor(
+        client,
+        evmKeyStore
+      );
+      const accounts = await evmKeyStoreInteractor.getAccounts();
+
+      if (accounts.length > 0) {
+        const { session } = await evmKeyStoreInteractor.login({
+          accountId: accounts[0].id,
+          config: { rules: ttlLoginRule(hours(2)), flags: ["MySession"] },
         });
-
-        // 2. Connect with MetaMask
-
-        const evmKeyStore = await createWeb3ProviderEvmKeyStore(
-          window.ethereum
+        setSession(session);
+      } else {
+        const authDescriptor = createSingleSigAuthDescriptorRegistration(
+          ["A", "T"],
+          evmKeyStore.id
         );
 
-        const evmKeyStoreInteractor = createKeyStoreInteractor(
+        const { session } = await registerAccount(
           client,
-          evmKeyStore
+          evmKeyStore,
+          registrationStrategy.open(authDescriptor, {
+            config: { rules: ttlLoginRule(hours(2)), flags: ["MySession"] },
+          }),
+          { name: "register_user", args: ["User"] }
         );
 
-        const accounts = await evmKeyStoreInteractor.getAccounts();
-
-        if (accounts.length > 0) {
-          // 4. Start a new session
-          const { session } = await evmKeyStoreInteractor.login({
-            accountId: accounts[0].id,
-            config: {
-              rules: ttlLoginRule(hours(2)),
-              flags: ["MySession"],
-            },
-          });
-
-          setSession(session);
-        } else {
-          // 5. Create a new account by signing a message using MetaMask
-          const authDescriptor = createSingleSigAuthDescriptorRegistration(
-            ["A", "T"],
-            evmKeyStore.id
-          );
-
-          const { session } = await registerAccount(
-            client,
-            evmKeyStore,
-            registrationStrategy.open(authDescriptor, {
-              config: {
-                rules: ttlLoginRule(hours(2)),
-                flags: ["MySession"],
-              },
-            }),
-            {
-              name: "register_user",
-              args: [getRandomUserName()],
-            }
-          );
-
-          setSession(session);
-          console.log("Session state after initialization:", session);
-        }
-      } catch (error) {
-        console.error("Error during session initialization:", error);
+        setSession(session);
       }
-    };
-
-    console.log("Current session state:", session);
-    initSession().catch((error) =>
-      console.error("Error initializing session:", error)
-    );
-  }, []);
+    } catch (error) {
+      console.error("Error during session initialization:", error);
+    }
+  };
 
   return (
-    <ChromiaContext.Provider value={session}>
+    <ChromiaContext.Provider value={{ session, login }}>
       {children}
     </ChromiaContext.Provider>
   );
 }
 
 export function useSessionContext() {
-  return useContext(ChromiaContext);
+  const context = useContext(ChromiaContext);
+  if (!context) {
+    throw new Error("useSessionContext must be used within a ContextProvider");
+  }
+  return context;
 }

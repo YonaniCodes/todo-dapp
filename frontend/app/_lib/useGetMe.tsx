@@ -1,12 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import { useSessionContext } from "../_components/ContextProvider";
-import { query } from "../service/api";
-
-type pubkeyType = Buffer<ArrayBufferLike> | undefined;
+import { query } from "../_service/api";
+import { TypePubkey } from "./types/global";
 
 const useGetMe = () => {
-  const session = useSessionContext();
-  const user_id: pubkeyType = session?.account?.id;
+  const { session } = useSessionContext();
+  const user_id: TypePubkey = session?.account?.id;
 
   const queryArg = {
     user_id,

@@ -6,6 +6,7 @@ export default function NoTaskCreated() {
   const { isCreating, createTasks } = useUploadTask();
 
   function handlCreateTasks() {
+    console.log("tasks");
     createTasks();
   }
   return (
@@ -16,20 +17,13 @@ export default function NoTaskCreated() {
             No Tasks Found
           </h3>
           <p className="text-sm text-gray-500">
-            It looks like you don&apost have any tasks yet. You can create 10
+            It looks like you don&apos;t have any tasks yet. You can create 10
             new tasks to get started.
           </p>
         </div>
 
         {/* Action Buttons */}
         <div className="flex space-x-4 mt-4">
-          {/* <AddTaskDialogue>
-            <Button className="flex items-center space-x-2" variant="secondary">
-              <PlusIcon className="h-4 w-4" />
-              <span>Create Task</span>
-            </Button>
-          </AddTaskDialogue> */}
-
           <Button
             disabled={isCreating}
             onClick={handlCreateTasks}

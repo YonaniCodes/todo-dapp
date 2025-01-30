@@ -1,11 +1,11 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useSessionContext } from "../_components/ContextProvider";
-import { operation } from "../service/api";
+import { operation } from "../_service/api";
 
 type argType = { arg: [Uint8Array]; name: "complete_task" | "uncomplete_task" };
 
 export function useComplete() {
-  const session = useSessionContext();
+  const { session } = useSessionContext();
   const queryClient = useQueryClient(); // Corrected here
 
   const { isPending: isCompleting, mutate: completeTask } = useMutation({

@@ -13,7 +13,7 @@ type Props = {
 
 export default function TaskActions({ isHovered, task }: Props) {
   const { deleteTask, isDeleting } = useDeleteTask();
-  console.log(task, ",,,,,,,,,,,,,,,,,,,");
+
   const { status, id } = task;
 
   function handleDelete() {
