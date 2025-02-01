@@ -71,6 +71,9 @@ cd backend
 chr install
 chr node start
 // Copy the BlockChaib rid from the log
+
+//if you are interested you can run some unit tests of basic functionalties
+ chr test
 ```
 
 ### **Front-End Setup Guide**
