@@ -18,8 +18,6 @@ export default function AddTaskDialogue({
 }) {
   const { isCreating, createTask } = useCreateTask();
 
-  console.log(typeof createTask);
-
   if (isCreating) return;
 
   return (

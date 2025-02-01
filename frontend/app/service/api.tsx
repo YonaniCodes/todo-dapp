@@ -23,7 +23,7 @@ export async function operation(
     return res;
   } catch (error) {
     console.log(error);
-    return error;
+    throw error;
   }
 }
 

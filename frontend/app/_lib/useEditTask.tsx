@@ -18,7 +18,7 @@ export function useEditTask() {
       });
       router.refresh();
     },
-    onError: (err) => console.log(err),
+    onError: (err) => 
   });
 
   return { isEditing, editTask };

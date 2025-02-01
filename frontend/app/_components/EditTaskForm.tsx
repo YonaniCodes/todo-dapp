@@ -48,6 +48,7 @@ export default function EditTaskForm({ task_id, editTask }: any) {
     }
 
     const due_date = new Date(data.due_date).getTime();
+    console.log(data.due_date);
     const arg = [title, description, due_date, task_id];
 
     console.log("Updating task with args:", arg);
@@ -81,7 +82,7 @@ export default function EditTaskForm({ task_id, editTask }: any) {
       {/* Due Date Field */}
       <FormElement label="Due Date" errorMsg={errors?.due_date?.message}>
         <Input
-          type="date"
+          type="datetime-local"
           id="due_date"
           {...register("due_date", { required: "Due date is required" })}
           className="border p-2 rounded"

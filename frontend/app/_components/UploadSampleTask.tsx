@@ -67,13 +67,13 @@ async function uploadTasks(session: TypeSession) {
 const addRandomTimeToTimestamp = (timestamp: number) => {
   const randomChoice = Math.floor(Math.random() * 3); // Randomly pick 0, 1, or 2
   const millisecondsInADay = 24 * 60 * 60 * 1000; // Milliseconds in a day
-  const millisecondsInOneMinute = 60 * 1000; // Milliseconds in 3 minutes
+  const millisecondsInHalfMinute = 30 * 1000; // Milliseconds in half minute
 
   if (randomChoice === 0) {
     return timestamp + millisecondsInADay; // Add 1 day
   } else if (randomChoice === 1) {
     return timestamp + 2 * millisecondsInADay; // Add 2 days
   } else {
-    return timestamp + millisecondsInOneMinute; // Add one Minute
+    return timestamp + millisecondsInHalfMinute; // Add half Minute
   }
 };

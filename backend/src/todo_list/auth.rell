@@ -15,3 +15,15 @@ function require_task_completed(task) =   require(
         task.status == task_status.COMPLETED, 
         "Task is not in completed state"
     );
+
+
+function require_due_date_in_future(due_date: timestamp) {
+    val buffer_ms = 60 * 5 * 1000;  
+ 
+   val blocktime=  op_context.last_block_time ;
+    // Ensure due_date is at least 5 minutes ahead of the last_block_time
+    val buffered_due_date= due_date+buffer_ms;
+    require(
+        buffered_due_date > blocktime,
+        "due date cant be in past");
+}

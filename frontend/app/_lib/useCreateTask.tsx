@@ -18,7 +18,9 @@ export function useCreateTask() {
       });
       router.push(`/`);
     },
-    onError: (err) => console.log(err),
+    onError: (err) => {
+      alert(err.message);
+    },
   });
 
   return { isCreating, createTask };

@@ -9,7 +9,7 @@ compile:
   rellVersion: 0.13.14
 database:
   schema: schema_backend
-  # host: 172.17.0.1
+  host: 172.17.0.1
 test:
   modules:
     - test
