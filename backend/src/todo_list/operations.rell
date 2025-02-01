@@ -77,7 +77,7 @@ operation update_task(title: text, description: text, due_date: timestamp, task_
     val account = auth.authenticate();
     val user = user @ { account };
     require_task(task_id);
-  require_due_date_in_future(due_date);
+    require_due_date_in_future(due_date);
     update task @ { .id == task_id, user } (
         .title = title,
         .due_date = due_date,
