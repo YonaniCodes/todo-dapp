@@ -1,17 +1,15 @@
- 
+// @test module;
 
-// import registration.*;
-// import lib.ft4.accounts.{ single_sig_auth_descriptor };
-// import lib.ft4.auth.{ evm_signatures };
-// import lib.ft4.core.accounts.strategies.open.{ ras_open };
+// import ^^.main.*;
+// import lib.ft4.accounts. { single_sig_auth_descriptor };
+// import lib.ft4.auth. { evm_signatures };
+// import lib.ft4.core.accounts.strategies.open. { ras_open };
 // import lib.ft4.external.accounts.{ add_auth_descriptor };
-// import lib.ft4.external.accounts.strategies.{ get_register_account_message };
+// import lib.ft4.external.accounts.strategies. { get_register_account_message };
 // import lib.ft4.test.utils.{ ft_auth_operation_for, evm_auth_operation_for, evm_sign };
-
 
 // val evm_address = x"1337c28e95ce85175af66353fecccd676e3d273a";
 // val evm_privkey = x"18e2d37cd5b51555c52d454c22608dee5e7151384f2d7b7bc21616e2eadc3e6f";
-
 
 // function test_evm_registration() {
 //     val alice_auth_desc = single_sig_auth_descriptor(evm_address, set(["A", "T"]));
@@ -26,7 +24,7 @@
 //         register_op.to_gtx_operation()
 //     );
 //     val signature = evm_sign(message, evm_privkey);
-//     // Register account using evm address
+//     // Register account using evm address 
 //     rell.test.tx()
 //         .op(evm_signatures([evm_address], [signature]))
 //         .op(strategy_op)
@@ -36,36 +34,31 @@
 
 //     assert_equals(user @ { } ( @sum 1 ), 1);
 
-
-
-//      // Create a task using the session keypair
+//     // Make post using session key
 //     rell.test.tx()
 //         .op(ft_auth_operation_for(alice_session_1.pub))
-//         .op(create_task(1740182400   ,"Do the internship task","Chromia first task"))
+//       .op(create_task(1769937124027, "title", "description"))
 //         .sign(alice_session_1)
 //         .run();
-//     assert_equals( task @ { } ( @sum 1 ), 1);
-
-// // Start a new session
+//     assert_equals(task @ { } ( @sum 1 ), 1);
+    
+//     // Start a new session
 //     val alice_session_2 = rell.test.keypairs.bob;
 //     val session_auth_desc = single_sig_auth_descriptor(alice_session_2.pub, set(["MySession"]));
 //     val add_auth_descriptor_operation = add_auth_descriptor(session_auth_desc);
 
-//     // Add a session token
+//     // Add session token
 //     rell.test.tx()
 //         .op(evm_auth_operation_for(evm_privkey, add_auth_descriptor_operation))
 //         .op(add_auth_descriptor_operation)
 //         .sign(alice_session_2)
 //         .run();
 
-//     // Make another post using the session key
+//     // Make another post using session key
 //     rell.test.tx()
-//         .op(ft_auth_operation_for(alice_session_1.pub))
-//         .op(create_task(1740182401   ,"Get Hired","Chromia second hired man"))
-//         .sign(alice_session_1)
+//         .op(ft_auth_operation_for(alice_session_2.pub))
+//     .op(create_task(1769937124027, "title", "description"))
+//         .sign(alice_session_2)
 //         .run();
-//     assert_equals( task @ { } ( @sum 1 ), 2);
-
-
-
+//     assert_equals(task @ { } ( @sum 1 ), 2);
 // }

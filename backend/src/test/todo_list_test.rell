@@ -1,9 +1,9 @@
 @test module;
 
- 
 import ^^.main.*;
-import lib.ft4.test.utils. { ft_auth_operation_for };
+import lib.ft4.test.utils.{ ft_auth_operation_for };
 
+// Test keypairs and public keys
 val alice = rell.test.pubkeys.alice;
 val bob = rell.test.pubkeys.bob;
 val charlie = rell.test.pubkeys.charlie;
@@ -11,28 +11,122 @@ val alice_kp = rell.test.keypairs.alice;
 val bob_kp = rell.test.keypairs.bob;
 val charlie_kp = rell.test.keypairs.charlie;
 
-function test_create_entities() {
-   
+// Test data
+val TASK_TITLE = "Test Task";
+val TASK_DESCRIPTION = "This is a test task.";
+val TASK_DUE_DATE = 1769937124027; // Example due date
+
+// Helper function to create a user
+function create_test_user(name: text, pubkey: byte_array) {
     rell.test.tx()
-        .op(create_user("Alice", alice))
-        .op(create_user("Bob", bob))
+        .op(create_user(name, pubkey))
         .run();
+}
+
+// Helper function to create a task
+function create_test_task(user_pubkey: byte_array, due_date: timestamp, title: text, description: text) {
+    rell.test.tx()
+        .op(ft_auth_operation_for(user_pubkey))
+        .op(create_task(due_date, title, description))
+        .sign(get_keypair_for_pubkey(user_pubkey))
+        .run();
+}
+
+// Helper function to get the keypair for a public key
+function get_keypair_for_pubkey(pubkey: byte_array) {
+    if(pubkey== alice)
+     return alice_kp;
+     if(pubkey== charlie)
+     return charlie_kp;
+     if(pubkey== bob)
+     return bob_kp;
+
+     return alice_kp;
+}
+
+// Test creating users and tasks
+function test_create_entities() {
+    create_test_user("Alice", alice);
+    create_test_user("Bob", bob);
 
     assert_equals(user @ { } (@sum 1), 2);
 
+    create_test_task(alice, TASK_DUE_DATE, TASK_TITLE, TASK_DESCRIPTION);
+    create_test_task(bob, TASK_DUE_DATE, TASK_TITLE, TASK_DESCRIPTION);
 
+    assert_equals(task @ { } (@sum 1), 2);
+}
+
+// Test updating a task
+function test_update_task() {
+    create_test_user("Alice", alice);
+    create_test_task(alice, TASK_DUE_DATE, TASK_TITLE, TASK_DESCRIPTION);
+
+    val task1 = task @ {.user.id == alice};
+    
     rell.test.tx()
         .op(ft_auth_operation_for(alice))
-        .op(create_task(1767225600000  , "title", "description"))
+        .op(update_task("Updated Title", "Updated Description", TASK_DUE_DATE, task1.id))
         .sign(alice_kp)
         .run();
-     rell.test.tx()
-        .op(ft_auth_operation_for(bob))
-        .op(create_task(1767225600000  , "title", "description"))
-        .sign(bob_kp)
+
+    val updated_task = task @ {.user.id == alice};
+    assert_equals(updated_task.title, "Updated Title");
+    assert_equals(updated_task.description, "Updated Description");
+}
+
+// Test completing a task
+function test_complete_task() {
+    create_test_user("Alice", alice);
+    create_test_task(alice, TASK_DUE_DATE, TASK_TITLE, TASK_DESCRIPTION);
+
+    val task1 = task @ {.user.id == alice};
+    
+    rell.test.tx()
+        .op(ft_auth_operation_for(alice))
+        .op(complete_task(task1.id))
+        .sign(alice_kp)
         .run();
-  
-    assert_equals(task @ { } (@sum 1), 2);
-   
-   
+
+    val completed_task = task @ {.user.id == alice};
+    assert_equals(completed_task.status, task_status.COMPLETED);
+}
+
+// Test uncompleting a task
+function test_uncomplete_task() {
+    create_test_user("Alice", alice);
+    create_test_task(alice, TASK_DUE_DATE, TASK_TITLE, TASK_DESCRIPTION);
+
+    val task1 = task @ {.user.id == alice};
+    
+    rell.test.tx()
+        .op(ft_auth_operation_for(alice))
+        .op(complete_task(task1.id))
+        .sign(alice_kp)
+        .run();
+    
+    rell.test.tx()
+        .op(ft_auth_operation_for(alice))
+        .op(uncomplete_task(task1.id))
+        .sign(alice_kp)
+        .run();
+
+    val uncompleted_task = task @ {.user.id == alice};
+    assert_equals(uncompleted_task.status, task_status.PENDING);
+}
+
+// Test deleting a task
+function test_delete_task() {
+    create_test_user("Alice", alice);
+    create_test_task(alice, TASK_DUE_DATE, TASK_TITLE, TASK_DESCRIPTION);
+
+    val task1 = task @ {.user.id == alice};
+    
+    rell.test.tx()
+        .op(ft_auth_operation_for(alice))
+        .op(delete_task(task1.id))
+        .sign(alice_kp)
+        .run();
+
+    assert_equals(task @ {.user.id == alice} (@sum 1), 0);
 }
