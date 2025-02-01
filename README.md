@@ -112,7 +112,7 @@ You can perform CRUD operations, filter tasks, and sort them. By default:
 
 <img src="frontend/assets/ui.png" alt="Task Management Screenshot" width="500" />
 
-_if you are going to a new task whose date is is in the past, nothing happen which means the task wont be created. for more please see my backend implmentation_
+_if you are going to a new task whose date is in the past, nothing happen which means the task wont be created. for more please see my backend implmentation also you cant change the status of overdue task user has no permision to change once a task is overdue by the block chain._
 
 ## Additional Notes
 
