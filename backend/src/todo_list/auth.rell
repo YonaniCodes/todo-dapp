@@ -4,3 +4,14 @@ function () = auth.add_auth_handler(
 );
 
 function require_task(id: byte_array) = require(task @? { id }, "Task with id %s does not exist".format(id)); 
+
+
+function require_task_Pending(task) =   require(
+        task.status == task_status.PENDING, 
+        "Task is not in pending state"
+    );
+
+function require_task_completed(task) =   require(
+        task.status == task_status.COMPLETED, 
+        "Task is not in completed state"
+    );

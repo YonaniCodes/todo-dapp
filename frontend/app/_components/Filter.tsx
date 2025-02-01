@@ -20,7 +20,6 @@ import { useQueryParams } from "../_lib/useQueryParams";
 
 // Define the status options
 const statuses = [
-  { label: "All", value: "all" },
   {
     value: "Pending",
     label: "Pending",

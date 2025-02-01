@@ -10,8 +10,8 @@ const useTasks = () => {
   const { getQueryParam } = useQueryParams();
 
   // Get the query parameters
-  const sortBy = getQueryParam("sortBy") || "due_date_desc";
-  const filterBy = getQueryParam("filterBy") || "all";
+  const sortBy = getQueryParam("sortBy");
+  const filterBy = getQueryParam("filterBy");
 
   // Create a unique query key that React Query can use to track changes
   const queryKey = ["Tasks", user_id, sortBy, filterBy];
@@ -22,11 +22,13 @@ const useTasks = () => {
       throw new Error("Session or user_id is missing.");
     }
 
-    const queryArgs = {
+    const queryArgs: { [key: string]: string | Buffer<ArrayBufferLike> } = {
       user_id,
-      task_sorting: sortBy.toUpperCase(),
-      task_filtering: filterBy.toUpperCase(),
     };
+
+    if (sortBy) queryArgs.task_sorting = sortBy.toUpperCase();
+
+    if (filterBy) queryArgs.task_filtering = filterBy.toUpperCase();
 
     try {
       const res = await session.query({

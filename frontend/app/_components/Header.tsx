@@ -21,6 +21,8 @@ function UserSection() {
   const { user: name, isLoading } = useGetMe();
   if (isLoading) return;
 
+  console.log(typeof name);
+
   return (
     <div className="flex items-center space-x-4">
       <p className="text-gray-700 font-medium">Hello 👋👋👋, {name}</p>

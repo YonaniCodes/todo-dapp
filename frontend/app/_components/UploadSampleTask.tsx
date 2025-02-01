@@ -1,43 +1,28 @@
 const tasks = [
   {
-    title: "Set Up Authentication",
-    description: "Implement user authentication with FT4.",
+    title: "Set Up Chromia Blockchain Environment",
+    description:
+      "Set up a local or testnet Chromia blockchain environment for development.",
   },
   {
-    title: "Create a Navigation Bar",
-    description: "Design a responsive navbar using shadcn/ui.",
+    title: "Integrate Chromia Node API",
+    description:
+      "Integrate Chromia Node API to fetch dynamic data from the blockchain.",
   },
   {
-    title: "Build Profile Page",
-    description: "Create a profile page for users to edit details.",
+    title: "Develop Smart Contracts for Chromia",
+    description:
+      "Create and deploy smart contracts on the Chromia blockchain to handle transactions.",
   },
   {
-    title: "Add Dark Mode",
-    description: "Implement dark mode toggle using Tailwind CSS.",
+    title: "Optimize Blockchain Transaction Performance",
+    description:
+      "Analyze and optimize the performance of blockchain transactions on the Chromia network.",
   },
   {
-    title: "Create Todo List",
-    description: "Allow users to manage tasks in a to-do list.",
-  },
-  {
-    title: "Set Up Block chain ApI",
-    description: "Integrate an the blockchain API to fetch dynamic data.",
-  },
-  {
-    title: "Optimize Performance",
-    description: "Analyze and optimize app performance for speed.",
-  },
-  {
-    title: "Add Notification System",
-    description: "Notify users of important actions and updates.",
-  },
-  {
-    title: "Create Settings Page",
-    description: "Build a settings page for user preferences.",
-  },
-  {
-    title: "Deploy the Application",
-    description: "Deploy app to production using Vercel or AWS.",
+    title: "Implement Chromia Wallet Integration",
+    description:
+      "Integrate a Chromia-compatible wallet for secure user transactions within the application.",
   },
 ];
 
@@ -82,13 +67,13 @@ async function uploadTasks(session: TypeSession) {
 const addRandomTimeToTimestamp = (timestamp: number) => {
   const randomChoice = Math.floor(Math.random() * 3); // Randomly pick 0, 1, or 2
   const millisecondsInADay = 24 * 60 * 60 * 1000; // Milliseconds in a day
-  const millisecondsInThreeMinutes = 3 * 60 * 1000; // Milliseconds in 3 minutes
+  const millisecondsInOneMinute = 60 * 1000; // Milliseconds in 3 minutes
 
   if (randomChoice === 0) {
     return timestamp + millisecondsInADay; // Add 1 day
   } else if (randomChoice === 1) {
     return timestamp + 2 * millisecondsInADay; // Add 2 days
   } else {
-    return timestamp + millisecondsInThreeMinutes; // Add 3 minutes
+    return timestamp + millisecondsInOneMinute; // Add one Minute
   }
 };

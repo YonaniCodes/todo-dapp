@@ -12,6 +12,7 @@ import {
 } from "@chromia/ft4";
 import { createClient } from "postchain-client";
 import { ReactNode, createContext, useContext, useState } from "react";
+import { getRandomUserName } from "../users";
 
 interface SessionContextType {
   session: Session | undefined;
@@ -56,7 +57,7 @@ export function ContextProvider({ children }: { children: ReactNode }) {
           registrationStrategy.open(authDescriptor, {
             config: { rules: ttlLoginRule(hours(2)), flags: ["MySession"] },
           }),
-          { name: "register_user", args: ["User"] }
+          { name: "register_user", args: [getRandomUserName()] }
         );
 
         setSession(session);

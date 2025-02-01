@@ -5,6 +5,7 @@ operation __begin_block(height: integer) {
         .status == task_status.PENDING and 
         .due_date < op_context.last_block_time 
     };
+    
     for (task in tasks) {
         overdue_task(task.id);
     }
@@ -12,10 +13,8 @@ operation __begin_block(height: integer) {
 
 function overdue_task(task_id: byte_array) {
     val task = require_task(task_id);
-    require(
-        task.status == task_status.PENDING, 
-        "Task is not in pending state"
-    );
+    require_task_Pending(task);
+    
     require(
         op_context.last_block_time > task.due_date, 
         "Task has still time"
@@ -34,20 +33,25 @@ operation create_user(name, pubkey) {
 operation create_task(due_date: timestamp, title: text, description: text) {
     val account = auth.authenticate();
     val user = user @ { account };
-   // since there might be a newrk delay add 60000 to the require function
+
+    // since there might be a network delay add 60000 to the require function
     require(
-        op_context.last_block_time < due_date+60000, 
+        op_context.last_block_time < due_date + 60000, 
         "Due date can't be in the past"
     );
+    
     create task (user, due_date, title, description);
 }
 
 operation complete_task(task_id: byte_array) {
     val account = auth.authenticate();
     // Get the user, as we don't want Trent to surprise Alice by completing her task if he knows her task_id
+
+    val task = require_task(task_id);
+    require_task_Pending(task);
     val user = user @ { account };
-     require_task(task_id);
-    update task @ { .id == task_id } (
+
+    update task @ { .id == task_id ,user} (
         .status = task_status.COMPLETED,
         updated_at = op_context.last_block_time
     );
@@ -55,8 +59,10 @@ operation complete_task(task_id: byte_array) {
 
 operation uncomplete_task(task_id: byte_array) {
     val account = auth.authenticate();
+    val task = require_task(task_id);
+    require_task_completed(task);
     val user = user @ { account };
-    require_task(task_id);
+
     update task @ { .id == task_id, user } (
         .status = task_status.PENDING,
         .updated_at = op_context.last_block_time
@@ -66,18 +72,20 @@ operation uncomplete_task(task_id: byte_array) {
 operation delete_task(task_id: byte_array) {
     val account = auth.authenticate();
     val user = user @ { account };
-      require_task(task_id);
+    require_task(task_id);
+    
     delete task @ { .id == task_id, user };
 }
 
 operation update_task(title: text, description: text, due_date: timestamp, task_id: byte_array) {
     val account = auth.authenticate();
     val user = user @ { account };
-     require_task(task_id);
+    require_task(task_id);
 
     update task @ { .id == task_id, user } (
         .title = title,
         .due_date = due_date,
-        .description = description
+        .description = description,
+        .updated_at = op_context.last_block_time
     );
 }

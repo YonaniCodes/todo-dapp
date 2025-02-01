@@ -1,7 +1,8 @@
-enum task_sorting { NONE, DUE_DATE_DESC, DUE_DATE_ASC }
+enum task_sorting { ALL, DUE_DATE_DESC, DUE_DATE_ASC }
 enum task_filtering { ALL, PENDING, COMPLETED, OVERDUE }
 
-query get_tasks(user_id: byte_array, task_sorting, task_filtering) {
+query get_tasks(user_id: byte_array, task_sorting=task_sorting.ALL, task_filtering=task_filtering.ALL) {
+
     // Check if the user exists
     val user = require(
         user @? { user_id },

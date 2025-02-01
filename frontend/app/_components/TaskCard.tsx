@@ -4,14 +4,12 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { useComplete } from "../_lib/useComplete";
 
 import { XIcon } from "lucide-react";
-import { formatTimestampToDay } from "../_lib/utils/date";
-import { TaskType } from "../_lib/types/global";
+import { formatDueDate } from "../_lib/utils/date";
+import { TaskType, TypeStatus } from "../_lib/types/global";
 
 type TaskProp = {
   task: TaskType;
 };
-
-type StatusType = "COMPLETED" | "PENDING" | "OVERDUE";
 
 export default function TaskCard({ task }: TaskProp) {
   const { completeTask, isCompleting } = useComplete();
@@ -54,7 +52,7 @@ export default function TaskCard({ task }: TaskProp) {
               {task.description}
             </p>
             <p className="text-xs text-gray-500 ml-4 whitespace-nowrap">
-              {formatTimestampToDay(task.due_date)}
+              {formatDueDate(task.due_date)}
             </p>
           </div>
         </div>
@@ -63,7 +61,7 @@ export default function TaskCard({ task }: TaskProp) {
   );
 }
 
-function getBadgeClass(status: StatusType): string {
+function getBadgeClass(status: TypeStatus): string {
   const badgeClasses = {
     COMPLETED: "bg-green-100 text-green-700",
     PENDING: "bg-blue-100 text-blue-700",
