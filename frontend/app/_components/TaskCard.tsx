@@ -13,6 +13,7 @@ type TaskProp = {
 
 export default function TaskCard({ task }: TaskProp) {
   const { completeTask, isCompleting } = useComplete();
+  const { status, dueDate, title, description } = task;
 
   function handleClick() {
     if (isCompleting || task.status === "OVERDUE") return; // Prevent action if completing or overdue
@@ -24,7 +25,7 @@ export default function TaskCard({ task }: TaskProp) {
   }
 
   return (
-    <Card className="p-4">
+    <Card className="p-6">
       {/* Main Task Details */}
       <CardContent className="flex items-center space-x-4">
         {/* Conditional Rendering of Checkbox or X Icon */}
@@ -40,8 +41,8 @@ export default function TaskCard({ task }: TaskProp) {
 
         <div className="flex-1">
           {/* Task Title and Status */}
-          <div className="flex justify-between items-center">
-            <h3 className="text-sm font-semibold">{task.title}</h3>
+          <div className="flex justify-between items-center mb-2s">
+            <h3 className="text-sm font-semibold">{title}</h3>
             <Badge className={`${getBadgeClass(task.status)} flex-shrink-0`}>
               {task.status}
             </Badge>

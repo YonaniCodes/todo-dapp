@@ -27,7 +27,10 @@ function UserSection() {
     <div className="flex items-center space-x-4">
       <p className="text-gray-700 font-medium">Hello 👋👋👋, {name}</p>
       <Avatar>
-        <AvatarImage src={"none" || undefined} alt={`${name}'s avatar`} />
+        <AvatarImage
+          src={"none for now" || undefined}
+          alt={`${name}'s avatar`}
+        />
         <AvatarFallback>
           {name?.charAt(0).toUpperCase() || "Yonani "}
         </AvatarFallback>

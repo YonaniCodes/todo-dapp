@@ -5,7 +5,6 @@ export type TaskType = {
   title: string;
   due_date: number;
   status: StatusType;
-  color: string;
   description: string;
 };
 export type TypePubkey = Uint8Array<ArrayBufferLike> | undefined;

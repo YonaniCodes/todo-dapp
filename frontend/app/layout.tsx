@@ -1,20 +1,15 @@
 import { Metadata } from "next";
-import localFont from "next/font/local";
+import { Inter } from "next/font/google"; // Importing Google Fonts
 import "./globals.css";
 import { ContextProvider } from "./_components/ContextProvider";
 import Header from "./_components/Header";
 
 import QueryProvider from "./_components/QueryProvider";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+// Load the Roboto font (You can also adjust the weights as needed)
+const roboto = Inter({
+  subsets: ["latin"],
+  weights: ["100", "400", "700"], // You can change these depending on your needs
 });
 
 export const metadata: Metadata = {
@@ -29,9 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
-      >
+      <body className={`${roboto.variable} antialiased`}>
         <QueryProvider>
           <ContextProvider>
             <div className="bg-[rgb(235, 180, 16)]">

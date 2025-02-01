@@ -14,11 +14,6 @@ type TaskFormData = {
   due_date: string; // ISO format (YYYY-MM-DD)
 };
 
-interface EditTaskFormProps {
-  task_id: Uint8Array;
-  // editTask: ()=>,
-}
-
 export default function EditTaskForm({ task_id, editTask }: any) {
   const { tasks } = useTasks();
 
