@@ -37,6 +37,7 @@ export function ContextProvider({ children }: { children: ReactNode }) {
         client,
         evmKeyStore
       );
+
       const accounts = await evmKeyStoreInteractor.getAccounts();
 
       if (accounts.length > 0) {

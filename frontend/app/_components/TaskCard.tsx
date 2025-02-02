@@ -41,7 +41,7 @@ export default function TaskCard({ task }: TaskProp) {
         <div className="flex-1">
           {/* Task Title and Status */}
           <div className="flex justify-between items-center mb-2s">
-            <h3 className="text-sm font-semibold">{title}</h3>
+            <h3 className="text-sm font-semibold">{task.title}</h3>
             <Badge className={`${getBadgeClass(task.status)} flex-shrink-0`}>
               {task.status}
             </Badge>
