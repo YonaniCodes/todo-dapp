@@ -9,7 +9,7 @@ export default function Header() {
   const { session, login } = useSessionContext(); // Fetch session data
 
   return (
-    <header className="border-b h-16 flex items-center justify-between px-6 fixed top-0 left-0 w-full bg-white z-10 shadow-md">
+    <header className="border-b h-16 flex items-center justify-between px-6 fixed top-0 left-0 w-full   z-10 shadow-md bg-slate-50">
       <h1 className="text-2xl font-bold text-primary">Todo Dapp</h1>
       {!session && <Button onClick={login}>Connect wallet</Button>}
       {session && <UserSection />}

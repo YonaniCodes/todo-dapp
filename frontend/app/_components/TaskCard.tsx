@@ -24,10 +24,8 @@ export default function TaskCard({ task }: TaskProp) {
   }
 
   return (
-    <Card className="p-6">
-      {/* Main Task Details */}
-      <CardContent className="flex items-center space-x-4">
-        {/* Conditional Rendering of Checkbox or X Icon */}
+    <Card className="p-6 hover:bg-slate-50">
+      <CardContent className="flex items-center space-x-4 ">
         {task.status === "OVERDUE" ? (
           <XIcon className="h-5 w-5 text-red-500" />
         ) : (
@@ -46,17 +44,16 @@ export default function TaskCard({ task }: TaskProp) {
               {task.status}
             </Badge>
           </div>
-          {/* Task Description and Due Date */}
-          <div className="flex justify-between items-center mt-2">
-            <p className="text-xs text-gray-600 flex-1 truncate">
-              {task.description}
-            </p>
-            <p className="text-xs text-gray-500 ml-4 whitespace-nowrap">
-              {formatDueDate(task.due_date)}
-            </p>
-          </div>
+
+          <p className="text-xs text-gray-600 flex  truncate">
+            {task.description}
+          </p>
         </div>
       </CardContent>
+
+      <p className="text-xs text-gray-500 flex justify-end ml-4 whitespace-nowrap">
+        {formatDueDate(task.due_date)}
+      </p>
     </Card>
   );
 }

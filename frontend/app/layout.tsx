@@ -27,7 +27,7 @@ export default function RootLayout({
       <body className={`${roboto.variable} antialiased`}>
         <QueryProvider>
           <ContextProvider>
-            <div className="bg-[rgb(235, 180, 16)]">
+            <div className="">
               <Header />
               {children}
             </div>

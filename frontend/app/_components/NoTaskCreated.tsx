@@ -17,7 +17,7 @@ export default function NoTaskCreated() {
             No Tasks Found
           </h3>
           <p className="text-sm text-gray-500">
-            It looks like you don&apos;t have any tasks yet. You can create 10
+            It looks like you don&apos;t have any tasks yet. You can create 5
             new tasks to get started.
           </p>
         </div>
@@ -30,7 +30,7 @@ export default function NoTaskCreated() {
             className="flex items-center space-x-2"
           >
             {/* <UploadIcon className="h-4 w-4" /> */}
-            {isCreating ? "Creating..." : "Upload 10 Sample Tasks"}
+            {isCreating ? "Creating..." : "Upload 5 Sample Tasks"}
           </Button>
         </div>
       </CardContent>

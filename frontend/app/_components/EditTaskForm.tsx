@@ -7,6 +7,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import FormElement from "./FormElement";
 import useTasks from "../_lib/useTasks";
 import { useEditTask } from "../_lib/useEditTask";
+import { timestampToDatetimeLocal } from "../_lib/utils/date";
 
 type TaskFormData = {
   title: string;
@@ -19,7 +20,7 @@ export default function EditTaskForm({ task_id, editTask }: any) {
 
   const task = tasks?.find((task) => task.id === task_id);
 
-  const { title, description } = task;
+  const { title, description, due_date } = task;
 
   const {
     register,
@@ -30,6 +31,7 @@ export default function EditTaskForm({ task_id, editTask }: any) {
     defaultValues: {
       title,
       description,
+      due_date: timestampToDatetimeLocal(due_date),
     },
   });
 
@@ -87,7 +89,7 @@ export default function EditTaskForm({ task_id, editTask }: any) {
       {/* Footer Buttons */}
       <DialogFooter className="flex justify-end gap-2">
         <DialogClose asChild>
-          <Button disabled variant="secondary" type="button">
+          <Button variant="secondary" type="button">
             Cancel
           </Button>
         </DialogClose>

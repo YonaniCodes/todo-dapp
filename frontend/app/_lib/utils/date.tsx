@@ -33,9 +33,17 @@ export function formatDueDate(dueTimestamp: number) {
   }
 }
 
-// Example usage:
-const dueTimestamp = new Date().getTime() + 86400000; // Due in 1 day (24 hours)
-console.log(formatDueDate(dueTimestamp)); // Output: "Due in 1 day"
+export function timestampToDatetimeLocal(timestamp: number) {
+  // Create a Date object from the timestamp (in milliseconds)
+  const date = new Date(timestamp);
 
-const overdueTimestamp = new Date().getTime() - 3600000; // Overdue by 1 hour
-console.log(formatDueDate(overdueTimestamp)); // Output: "Overdue by 1 hour"
+  // Get the individual components
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0"); // Months are 0-indexed, so add 1
+  const day = String(date.getDate()).padStart(2, "0");
+  const hours = String(date.getHours()).padStart(2, "0");
+  const minutes = String(date.getMinutes()).padStart(2, "0");
+
+  // Format the date into the datetime-local format
+  return `${year}-${month}-${day}T${hours}:${minutes}`;
+}
