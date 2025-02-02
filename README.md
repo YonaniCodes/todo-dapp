@@ -23,17 +23,14 @@ This project is a multi-user todo-list decentralised application developed using
 
    - Users log in securely by connecting an **EVM-compatible wallet** like MetaMask.
    - Tasks are securely associated with the authenticated user's account.
-
 2. **Task Management**:
 
    - Users can create tasks by providing a title, description, and due date.
    - Tasks can be updated, completed, deleted, or filtered by status (completed/pending) and sorted by due date.
    - Tasks not completed by their due date are automatically transitioned to the **OVERDUE** state by the blockchain.
-
 3. **Real-Time Performance**:
 
    - Using **React Query**, the app provides efficient data fetching, caching, and synchronization, ensuring real-time updates across the UI.
-
 4. **User-Friendly Interface**:
 
    - A simple UI lets users manage tasks with minimal effort, view real-time task status, and toggle between completed and incomplete states.
@@ -70,7 +67,7 @@ the change direrectory to the cloned repo
 cd backend
 chr install
 chr node start
-// Copy the BlockChaib rid from the log
+// Copy the BlockChaib rid from the log or run the following cmd
 
 //if you are interested you can run some unit tests of basic functionalties
  chr test
@@ -110,13 +107,14 @@ When you open the landing page, MetaMask will prompt you to connect your wallet.
 
 You can perform CRUD operations, filter tasks, and sort them. By default:
 
-- **Filter**: None
+- **Filter**: None (fetch all data)
 - **Sorting**: Due date (ascending)
 
 <img src="frontend/assets/ui.png" alt="Task Management Screenshot" width="500" />
 
-_if you are going to a new task whose date is in the past, nothing happen which means the task wont be created. for more please see my backend implmentation also you cant change the status of overdue task user has no permision to change once a task is overdue by the block chain._
-
 ## Additional Notes
 
-- If you encounter any dependency issues, feel free to reach out to me via the provided contact information.
+1. Nothing occurs when you attempt to create a new task whose date has passed, indicating that the work will not be generated. Please refer to my backend implementation for further details.
+2. Additionally, once a work is past due according to the block chain, the user is not permitted to change its status. **A task cannot be overdue by the user; instead, the blockchain will mark it as such if it is not finished by the deadline.**
+3. The only way to obtain tasks is through a single, dynamic API that can filter, sort, and return all of the tasks. This means that the clients can retrieve all of the tasks and filter them, but I use blockchain-side filtering and sorting even though I can do it in the front end.
+4. My custom hooks are perfect for the user experience since they can cache tasks rather than triggering a request each time the filter is modified.

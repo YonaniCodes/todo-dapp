@@ -39,7 +39,7 @@ function TaskHover({ task }: { task: TaskType }) {
       onMouseEnter={() => setIsHovered(true)} // Set hover state to true when mouse enters
       onMouseLeave={() => setIsHovered(false)}
     >
-      <TaskActions id={task.id} task={task} isHovered={isHovered} />
+      <TaskActions task={task} isHovered={isHovered} />
       <div className="flex-1">
         <TaskCard task={task} />
       </div>

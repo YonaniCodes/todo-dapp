@@ -13,7 +13,6 @@ type TaskProp = {
 
 export default function TaskCard({ task }: TaskProp) {
   const { completeTask, isCompleting } = useComplete();
-  const { status, dueDate, title, description } = task;
 
   function handleClick() {
     if (isCompleting || task.status === "OVERDUE") return; // Prevent action if completing or overdue
