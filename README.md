@@ -84,8 +84,11 @@ chr node start
 
 open the .env file set the values
 
+```
 NEXT_PUBLIC_NODE_URL_POOL=http://localhost:7740
-NEXT_PUBLIC_BLOCKCHAIN_RID=`<your blochain rid/>`
+NEXT_PUBLIC_BLOCKCHAIN_RID=`<your blochain rid/>
+
+```
 
 Install the dependencies
 
