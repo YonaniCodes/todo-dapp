@@ -10,7 +10,7 @@ import Toast from "./_components/Toast";
 // Load the Roboto font (You can also adjust the weights as needed)
 const roboto = Inter({
   subsets: ["latin"],
-  weights: ["100", "400", "700"], // You can change these depending on your needs
+  weight: ["100", "400", "700"], // You can change these depending on your needs
 });
 
 export const metadata: Metadata = {
