@@ -49,11 +49,12 @@ const useTasks = () => {
     isError,
     refetch,
   } = useQuery({
-    staleTime: 1000 * 60,
+    staleTime: 1000 * 30,
     queryKey,
     queryFn: fetchTasks,
     enabled: !!user_id, // Only run if user_id is available
-    refetchOnWindowFocus: false, // Optional: prevent refetching when the window gains focus
+    refetchOnWindowFocus: false,
+    refetchInterval: 1000 * 30, // Optional: prevent refetching when the window gains focus
   });
 
   return { tasks, isError, isLoading, refetch };

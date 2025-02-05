@@ -30,7 +30,7 @@ const statuses = [
   },
   {
     value: "overdue",
-    label: "overdue",
+    label: "Overdue",
   },
 ];
 

@@ -5,6 +5,7 @@ import { ContextProvider } from "./_components/ContextProvider";
 import Header from "./_components/Header";
 
 import QueryProvider from "./_components/QueryProvider";
+import Toast from "./_components/Toast";
 
 // Load the Roboto font (You can also adjust the weights as needed)
 const roboto = Inter({
@@ -31,6 +32,7 @@ export default function RootLayout({
               <Header />
               {children}
             </div>
+            <Toast />
           </ContextProvider>
         </QueryProvider>
 

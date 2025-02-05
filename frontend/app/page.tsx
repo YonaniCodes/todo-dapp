@@ -1,6 +1,7 @@
 "use client";
 import ConnectWallet from "./_components/ConnectWallet";
 import { useSessionContext } from "./_components/ContextProvider";
+import FloatingAddTaskButton from "./_components/FloatingAddTaskButton";
 import NoTaskCreated from "./_components/NoTaskCreated";
 import SortFilterMenue from "./_components/SortFilterMenue";
 import Tasks from "./_components/Tasks";
@@ -25,6 +26,7 @@ export default function Home() {
       <div className="w-[800px] mx-auto mt-[100px]">
         <SortFilterMenue />
         <Tasks />
+        <FloatingAddTaskButton />
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import { useSessionContext } from "../_components/ContextProvider";
 import { useQueryClient } from "@tanstack/react-query";
 import { operation } from "../service/api";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 // Define the shape of the arguments for the task creation
 type argType = { arg: [string, string, number, Uint8Array] };
 
@@ -16,9 +17,10 @@ export function useEditTask() {
       queryClient.invalidateQueries({
         queryKey: ["Tasks"],
       });
+      toast.success(`Task Updated!`);
       router.refresh();
     },
-    onError: (err) => alert(err.message),
+    onError: () => toast.error("Task should be at least 1 min a head."),
   });
 
   return { isEditing, editTask };

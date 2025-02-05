@@ -24,26 +24,25 @@ export default function TaskActions({ isHovered, task }: Props) {
 
   return (
     <span
-      className={`flex flex-col space-y-2 ml-4  ${
+      className={`flex flex-col space-y-2 ml-4  mt-6 ${
         isHovered ? "" : "opacity-0"
       }`}
     >
-      <AddTaskDialogue>
-        <Button disabled={isDeleting} size="sm">
-          <PlusIcon className="w-4 h-4" aria-hidden="true" /> {/* Add Icon */}
-        </Button>
-      </AddTaskDialogue>
-
       {status != "OVERDUE" && (
         <EditTaskDialogue task_id={id}>
-          <Button disabled={isDeleting} variant="outline" size="sm">
+          <Button title="Edit Task" disabled={isDeleting} size="sm">
             <PencilIcon className="w-4 h-4" aria-hidden="true" />{" "}
           </Button>
         </EditTaskDialogue>
       )}
 
       <DeleteConfirmationDialog onConfirm={handleDelete}>
-        <Button disabled={isDeleting} variant="secondary" size="sm">
+        <Button
+          title="Delete Task"
+          disabled={isDeleting}
+          variant="secondary"
+          size="sm"
+        >
           <TrashIcon className="w-4 h-4" aria-hidden="true" />{" "}
           {/* Delete Icon */}
         </Button>

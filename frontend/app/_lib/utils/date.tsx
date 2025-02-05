@@ -11,13 +11,13 @@ export function formatDueDate(dueTimestamp: number) {
   if (difference < 0) {
     // Task is overdue
     if (days > 0) {
-      return `Overdue by ${days} day${days > 1 ? "s" : ""}`;
+      return `Overdue  ${days} day${days > 1 ? "s" : ""} ago`;
     } else if (hours > 0) {
-      return `Overdue by ${hours} hour${hours > 1 ? "s" : ""}`;
+      return `Overdue  ${hours} hour${hours > 1 ? "s" : ""} ago`;
     } else if (minutes > 0) {
-      return `Overdue by ${minutes} minute${minutes > 1 ? "s" : ""}`;
+      return `Overdue  ${minutes} minute${minutes > 1 ? "s" : ""} ago`;
     } else {
-      return `Overdue by ${seconds} second${seconds > 1 ? "s" : ""}`;
+      return `Overdue  ${seconds} second${seconds > 1 ? "s" : ""} ago`;
     }
   } else {
     // Task is due in the future
