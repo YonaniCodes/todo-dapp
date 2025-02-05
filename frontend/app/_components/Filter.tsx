@@ -36,7 +36,7 @@ const statuses = [
 
 export default function Filter() {
   const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState("all");
+  const [value, setValue] = React.useState();
   const { updateQueryParam } = useQueryParams();
 
   return (
