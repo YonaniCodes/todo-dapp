@@ -104,6 +104,8 @@ Thanks Incase you found any dependency problem please reach out to me!
 
 ## Usage Instructions
 
+You can see [Watch the Demo on Loom](https://www.loom.com/share/08f585a6459742f3b8f96f924fe69783) or follow the instuction below, I suggest the demo.
+
 - Connect to metamask wallet using google chrome browser
 
   <img src="frontend/assets/login.png" alt="Landing Page Screenshot" width="500" />
